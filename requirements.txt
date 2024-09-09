@@ -3,3 +3,4 @@ pandas
 shap
 streamlit
 setuptools
+lightgbm
