@@ -5,4 +5,3 @@ pandas==2.0.3
 pycaret==3.1.0
 shap==0.44.1
 streamlit==1.25.0
-~hap==0.42.1
