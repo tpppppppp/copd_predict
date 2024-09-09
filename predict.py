@@ -2,25 +2,29 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import shap
-from pycaret.classification import load_model, predict_model
+# from pycaret.classification import load_model, predict_model
 import streamlit.components.v1 as components
+import pickle
 
 
 # 加载模型
-model_best = load_model('best_model')
-
+# model_best = load_model('best_model')
+with open('mymodel.pkl', 'rb') as f:
+    loaded_model = pickle.load(f)
+    
 # 提取 PyCaret 模型中的基础模型
-def extract_core_model(pycaret_model):
-    if hasattr(pycaret_model, 'steps'):
-        core_model = pycaret_model.steps[-1][1]  # 提取管道中的最后一个步骤模型
-    else:
-        core_model = pycaret_model
-    return core_model
+# def extract_core_model(pycaret_model):
+#     if hasattr(pycaret_model, 'steps'):
+#         core_model = pycaret_model.steps[-1][1]  # 提取管道中的最后一个步骤模型
+#     else:
+#         core_model = pycaret_model
+#     return core_model
 
 # 使用 SHAP 解释器进行可视化
 def draw_force(model_best, X):
-    core_model = extract_core_model(model_best)
-    explainer = shap.Explainer(core_model)
+#     core_model = extract_core_model(model_best)
+#     explainer = shap.Explainer(core_model)
+    explainer = shap.Explainer(model_best)
     shap_values = explainer(X)
     
     # 显示 force_plot 到 Streamlit
