@@ -1,6 +1,6 @@
 numpy
 pandas
-pycaret
+pickle
 shap
 streamlit
 setuptools
