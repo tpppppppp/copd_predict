@@ -1,0 +1,8 @@
+numpy==1.23.5
+numpy==1.22.4
+pandas==1.5.3
+pandas==2.0.3
+pycaret==3.1.0
+shap==0.44.1
+streamlit==1.25.0
+~hap==0.42.1
