@@ -1,6 +1,6 @@
 numpy
 pandas
-shap==0.44.1
-streamlit==1.25.0
+shap
+streamlit
 setuptools
 lightgbm
