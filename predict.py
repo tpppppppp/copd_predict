@@ -6,6 +6,7 @@ import shap
 import streamlit.components.v1 as components
 import pickle
 
+
 # 加载模型
 # model_best = load_model('best_model')
 
@@ -44,7 +45,7 @@ def st_shap(plot, height=None):
 def main():
     with open('mymodel.pkl', 'rb') as f:
         model_best = pickle.load(f)
-        
+
     st.title("Hospitalization death prediction")
     #     html_temp = """
     #     <div style="background-color: #FFFF00; padding: 16px">
@@ -65,9 +66,7 @@ def main():
     EF1 = st.text_input("EF", "68")
 
     # 转换用户输入为浮点型
-    input_data = pd.DataFrame([[float(PAD1), float(PV1), float(cTnT1), float(DD1), float(Vmax1),
-                                float(NEUT1), float(NTproBNP1), float(EF1), float(RAD1)]],
-                              columns=['PAD', 'PV', 'cTnT', 'DD', 'Vmax', 'NEUT%', 'NT-proBNP', 'EF', 'RAD'])
+    input_data = pd.DataFrame([[float(PAD1), float(PV1), float(cTnT1), float(DD1), float(Vmax1), float(NEUT1), float(NTproBNP1), float(EF1), float(RAD1)]], columns=['PAD', 'PV', 'cTnT', 'DD', 'Vmax', 'NEUT%', 'NT-proBNP', 'EF', 'RAD'])
 
     if st.button("Predict"):
         # 获取预测结果
