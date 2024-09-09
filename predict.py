@@ -10,7 +10,7 @@ import pickle
 # 加载模型
 # model_best = load_model('best_model')
 with open('mymodel.pkl', 'rb') as f:
-    loaded_model = pickle.load(f)
+    model_best = pickle.load(f)
     
 # 提取 PyCaret 模型中的基础模型
 # def extract_core_model(pycaret_model):
