@@ -4,3 +4,4 @@ shap
 streamlit
 setuptools
 lightgbm
+matplotlib
