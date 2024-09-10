@@ -26,6 +26,7 @@ def draw_force(model_best, X):
     shap_values = explainer(X)
     # print(explainer.expected_value)
     # 显示 force_plot 到 Streamlit
+    print(explainer.expected_value, shap_values.values[0, 1], X.iloc[0, :])
     shap_html = shap.force_plot(explainer.expected_value, shap_values.values[0, 1], X.iloc[0, :], link='logit', matplotlib=False)
     return shap_html
 
